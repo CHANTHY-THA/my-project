@@ -1,0 +1,58 @@
+
+.main-container{
+    background: #fff;
+  }
+  .table-container {
+    position: relative;
+    min-height: 200px;
+    max-height: 81vh;
+    overflow: auto;
+  }
+  table {
+    width: 100%;
+  }
+  
+  tr:hover {
+    background: whitesmoke;
+  }
+  
+  button{
+    outline: none;
+  }
+  
+  .header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .search-item{
+    margin-left: 25px;
+  }
+  .mat-form-field {
+    font-size: 14px;
+    width: 18%;
+  }
+  
+  th{
+    color: blueviolet;
+    background: #fff;
+    position: sticky;
+    top: 0;
+  }
+  .action:hover{
+    cursor: pointer;
+  }
+  
+  .header{
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-top: 10px;
+    margin-bottom: -10px;
+  }
+  
+  .head{
+    font-size: 18px;
+  }
+  
+  

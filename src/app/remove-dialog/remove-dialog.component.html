@@ -1,0 +1,10 @@
+
+<h1 mat-dialog-title>Remove data</h1>
+<div mat-dialog-content>
+  <p>Are you sure?</p>
+</div>
+
+<div mat-dialog-actions class="twoBtn">
+  <button mat-button mat-dialog-close>No</button>
+  <button routerLink="/booking" routerLinkActive="active-link" (click)='alertSnackbar()' mat-button cdkFocusInitial mat-dialog-close>Save</button>
+</div>

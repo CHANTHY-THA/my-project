@@ -1,0 +1,169 @@
+<div class="form-container">
+    <div class="header">
+        <span class="book-title">Booking form</span>
+        <div>
+            <button class="menu-icon" mat-icon-button [matMenuTriggerFor]="menu" aria-label="menu-icon icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+            <button routerLink="/booking" class="menu-icon" mat-menu-item>
+                <mat-icon>dialpad</mat-icon>
+                <span (click)="createCustomer()" cdkFocusInitial>Save</span>
+            </button>
+            </mat-menu><br>   
+        </div>
+       
+    </div>
+    
+    <!-- ===============Booking form================ -->
+    <div class="booking-form">
+        <div class="myForm">
+
+        <mat-form-field appearance="legacy">
+            <mat-label>Customer name*</mat-label>
+            <input matInput type="text" [(ngModel)]="customer">
+            <button *ngIf="customer" matSuffix mat-icon-button aria-label="Clear" (click)="customer=''">
+            <mat-icon>close</mat-icon>
+            </button>
+
+        </mat-form-field><br>
+        <mat-form-field appearance="legacy">
+            <mat-label>Phone</mat-label>
+            <input matInput type="text" [(ngModel)]="phone">
+            <button *ngIf="phone" matSuffix mat-icon-button aria-label="Clear" (click)="phone=''">
+            <mat-icon>close</mat-icon>
+            </button>
+
+        </mat-form-field><br>
+      
+     
+        <mat-form-field appearance="legacy">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" [(ngModel)]="email">
+            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+            Email is <strong>required</strong>
+            </mat-error>
+
+            <button *ngIf="email" matSuffix mat-icon-button aria-label="Clear" (click)="email=''">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        
+        <mat-form-field appearance="legacy">
+            <mat-label>Address*</mat-label>
+            <textarea matInput [(ngModel)]="address"></textarea>
+            <button *ngIf="address" matSuffix mat-icon-button aria-label="Clear" (click)="address=''">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+
+        <!-- ========================================= -->
+
+
+        <mat-form-field appearance="legacy">
+            <mat-label>Address</mat-label>
+            <input matInput type="text">
+
+        </mat-form-field><br>
+
+
+
+
+        <mat-form-field appearance="legacy">
+            <mat-label>Clearable input</mat-label>
+            <input matInput type="text">
+    
+        </mat-form-field><br>
+        
+
+        <mat-form-field appearance="legacy">
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        </mat-form-field><br>
+
+        <mat-form-field appearance="legacy" >
+            <mat-label>Amount</mat-label>
+            <input matInput type="number" >
+        </mat-form-field><br>
+    
+        <!-- combobox form  -->
+        <mat-form-field appearance="legacy">
+            <mat-label>Select</mat-label>
+            <mat-select>
+            <mat-option value="one">First option</mat-option>
+            <mat-option value="two">Second option</mat-option>
+            <mat-option value="two">Third option</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="myForm">
+        <mat-form-field appearance="legacy">
+            <mat-label>Clearable input</mat-label>
+            <input matInput type="text">
+
+        </mat-form-field><br>
+        <mat-form-field appearance="legacy">
+            <mat-label>Clearable input</mat-label>
+            <input matInput type="text">
+
+        </mat-form-field><br>
+
+        <mat-form-field appearance="legacy">
+            <mat-label>Clearable input</mat-label>
+            <input matInput type="text">
+
+        </mat-form-field><br>
+        
+
+        <!-- ===================Date field========================= -->
+        <mat-form-field appearance="legacy">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field><br>
+          
+        
+        <mat-form-field appearance="legacy">
+            <mat-label>Clearable input</mat-label>
+            <input matInput type="text">
+    
+        </mat-form-field><br>
+        
+
+        <mat-form-field appearance="legacy">
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        </mat-form-field><br>
+
+        <mat-form-field appearance="legacy" >
+            <mat-label>Amount</mat-label>
+            <input matInput type="number" >
+        </mat-form-field><br>
+    
+        <!-- combobox form  -->
+        <mat-form-field appearance="legacy">
+            <mat-label>Select</mat-label>
+            <mat-select>
+            <mat-option value="one">First option</mat-option>
+            <mat-option value="two">Second option</mat-option>
+            <mat-option value="two">Third option</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    </div>
+
+    <!-- ================Save data========================= -->
+    <button (click)="createCustomer()" (click)="openDialog()" class="save-btn" mat-raised-button color="primary">Save</button>
+    <button class="cancel-btn" routerLink="/booking" routerLinkActive="active-link" mat-stroked-button>Cancel</button>
+  </div>
+  

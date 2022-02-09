@@ -1,0 +1,60 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)) , url('../../assets/img/bg4.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+button{
+    outline: none;
+}
+
+.login{
+    width: 30%;
+    margin-left: 35%;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+form{
+    width: 100%;
+    padding: 25px;
+    background: none;
+    margin: 0;
+    background: none;
+}
+mat-form-field{
+    width: 100%;
+}
+input[type=text],
+.btnSubmit{
+    width: 100%;
+}
+h1{
+    text-align: center;
+}
+
+.btnSubmit{
+    margin-top: 10%;
+}
+
+.password,
+.username{
+    display: flex;
+    align-items: center;
+}
+mat-icon{
+    margin-right: 10px;
+}
+
+.card{
+    width: 30%;
+}

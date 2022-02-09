@@ -1,0 +1,67 @@
+
+.main-content{
+    width: 96%;
+    margin-left: 2%;
+    margin-top: 5%;
+}
+
+.fastDashboard{
+    margin-top: 5%;
+}
+
+.booking-icon,
+.revenue-icon,
+.delivery-icon,
+.follow-icon {
+    width: 25%;
+    height: 100px;
+    padding: 35px;
+    margin-top: -12%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.booking-icon{
+    background: orange;
+}
+
+.card-board{
+    display: flex;
+    justify-content: space-between;
+}
+.card-category{
+    color: rgb(150, 147, 147);
+    font-size: 15px;
+}
+.card-title{
+    color: black;
+    font-size: 20px;
+}
+
+
+.revenue-icon{
+    background: rgb(60, 197, 60);
+}
+.delivery-icon{
+    background: rgb(243, 95, 157);
+}
+
+.follow-icon{
+    background: rgb(15, 212, 212);
+}
+
+
+.icon{
+    font-size: 40px;
+    color: #fff;
+}
+
+.card-footer{
+    display: flex;
+    align-items: center;
+}
+.stats{
+    display: flex;
+    align-items: center;
+}

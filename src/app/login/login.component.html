@@ -1,0 +1,27 @@
+
+<div class="body">
+    <mat-card class="card">
+      <form [formGroup]="form" (ngSubmit)="loginAccount()">
+        <h1>Login user</h1>
+  
+        <div class="username">
+          <mat-icon color="primary">people</mat-icon>
+          <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input matInput type="text" autocomplete="off" formControlName="username">
+          </mat-form-field>
+        </div>
+      
+        <div class="password">
+          <mat-icon color="primary">https</mat-icon>
+            <mat-form-field>
+              <mat-label>Password</mat-label>
+              <input matInput type="password" autocomplete="off" formControlName="password" required>
+          </mat-form-field>
+        </div>
+      
+        <button type="submit" class="btnSubmit" mat-raised-button color="primary" [disabled]="form.invalid">Login</button>
+      </form>
+    </mat-card>
+  </div>
+  
