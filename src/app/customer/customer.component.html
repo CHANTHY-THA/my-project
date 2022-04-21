@@ -1,10 +1,10 @@
 <div class="main-container">
     <div class="header">
-        <span class="head">Booking</span>
+        <span class="head">Customer</span>
         <div>
             <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="New item"><mat-icon>more_vert</mat-icon></button>
             <mat-menu #menu="matMenu">
-                <button routerLink="/bookingForm" routerLinkActive="active-link" class="menu-icon" mat-menu-item>
+                <button routerLink="/customerForm" routerLinkActive="active-link" class="menu-icon" mat-menu-item>
                     <mat-icon>dialpad</mat-icon>
                     <span mat-button cdkFocusInitial>New</span>
                 </button>
@@ -24,7 +24,7 @@
       </mat-form-field>
 
       <!-- ================Paginator===================== -->
-      <mat-paginator  [pageSizeOptions]="[10,20, 100, 300]"
+      <mat-paginator  [pageSizeOptions]="[10,20,100,200]"
           showFirstLastButtons 
           aria-label="Select page of periodic elements">
       </mat-paginator>
@@ -35,9 +35,9 @@
     <div class="table-container">
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z0" matSort>
 
-        <ng-container matColumnDef="no">
-        <th mat-header-cell *matHeaderCellDef> No </th>
-        <td mat-cell *matCellDef="let element; let no = index"> {{no+1}} </td>
+        <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Id </th>
+        <td mat-cell *matCellDef="let element; let id = index"> {{id+1}} </td>
         </ng-container>
 
         <!-- Position Column -->
@@ -60,7 +60,7 @@
           <td mat-cell matRipple *matCellDef="let element"> {{element.email}} </td>
         </ng-container>
     
-        <!-- Symbol Column -->
+        Symbol Column
         <ng-container matColumnDef="address">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Address </th>
           <td mat-cell matRipple *matCellDef="let element"> {{element.address}} </td>
@@ -71,10 +71,10 @@
           <th mat-header-cell *matHeaderCellDef style="text-align: right;">Action</th>
           <td mat-cell *matCellDef="let element let id = index" style="text-align: right;">
             
-            <a routerLink="/bookingForm" (click)="updatedataItem(element)" style="color: rgb(14, 201, 14)" matTooltip="Edit item">
+            <a (click)="editCustomer(element)" style="color: rgb(14, 201, 14)" matTooltip="Edit item">
               <mat-icon class="action p-1 m-0">create</mat-icon>
             </a>
-            <a (click)="deleteItem(id)" matTooltip="Delete item">
+            <a (click)="deleteCustomer(id)" matTooltip="Delete item">
               <mat-icon class="action p-1 m-0" color="warn">delete</mat-icon>
             </a>
             
@@ -86,4 +86,5 @@
     </table>
   </div>
 </div>
+
   

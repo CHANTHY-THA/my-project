@@ -32,6 +32,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { ServicesComponent } from './services/services.component';
 import { RemoveDialogComponent } from './remove-dialog/remove-dialog.component';
+import { CustomerComponent } from './customer/customer.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CustomerFormComponent } from './customer/customer-form/customer-form.component';
 
 
 @NgModule({
@@ -45,6 +48,8 @@ import { RemoveDialogComponent } from './remove-dialog/remove-dialog.component';
     DialogComponent,
     ServicesComponent,
     RemoveDialogComponent,
+    CustomerComponent,
+    CustomerFormComponent,
     
   ],
   imports: [
@@ -72,11 +77,14 @@ import { RemoveDialogComponent } from './remove-dialog/remove-dialog.component';
     MatNativeDateModule,
     MatSnackBarModule,
     MatTooltipModule,
+    HttpClientModule,
 
   ],
   providers: [
     BookingComponent,
     BookingFormComponent,
+    CustomerComponent,
+    CustomerFormComponent,
   ],
   bootstrap: [AppComponent]
 })

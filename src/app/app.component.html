@@ -55,7 +55,7 @@
             </mat-panel-title>
 
           </mat-expansion-panel-header>
-          <button class="btnComponent" routerLink="/booking" routerLinkActive="active-link" mat-button>
+          <button (click)="onBooking()" class="btnComponent" routerLink="/booking" routerLinkActive="active-link" mat-button>
             <mat-icon class="menuicon" aria-label="icon" color="primary">arrow_right</mat-icon> Booking
           </button><br>
           <button class="btnComponent" routerLink="/bookingForm" routerLinkActive="active-link" mat-button>
@@ -80,8 +80,8 @@
           <button class="btnComponent" routerLink="/customer" routerLinkActive="active-link" mat-button>
             <mat-icon class="menuicon" aria-label="icon" color="primary">arrow_right</mat-icon> Customers
           </button><br>
-          <button class="btnComponent" routerLink="/" routerLinkActive="active-link" mat-button>
-            <mat-icon class="menuicon" aria-label="icon" color="primary">arrow_right</mat-icon> Booking Pc
+          <button class="btnComponent" routerLink="/customerForm" routerLinkActive="active-link" mat-button>
+            <mat-icon class="menuicon" aria-label="icon" color="primary">arrow_right</mat-icon> Customer Form
           </button><br>
           <button class="btnComponent" routerLink="/" routerLinkActive="active-link" mat-button>
             <mat-icon class="menuicon" aria-label="icon" color="primary">arrow_right</mat-icon> Booking Pc

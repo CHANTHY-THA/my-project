@@ -13,7 +13,12 @@ export class LoginComponent implements OnInit {
   form: FormGroup;
   eye = "";
   isLogin: boolean = true;
-  constructor(private fb: FormBuilder,private snackBar: MatSnackBar, private route: Router, private logined: AppComponent) {
+
+  constructor(
+    private fb: FormBuilder,
+    private snackBar: MatSnackBar, 
+    private route: Router, 
+    private logined: AppComponent) {
     this.form = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required],

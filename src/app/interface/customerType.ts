@@ -4,4 +4,4 @@ export interface customerType {
     phone: string;
     email: string;
     address: string;
-  }
+}

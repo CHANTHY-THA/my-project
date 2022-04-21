@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -22,10 +21,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     let username = localStorage.getItem('username');
-    console.log(username);
-    
+  
     if(username != null){
       this.isLogin = true;
+      this.route.navigateByUrl('/dashboard')
     }
   }
 
@@ -40,5 +39,11 @@ export class AppComponent implements OnInit {
     this.route.navigateByUrl('/');
     this.snackBar.open("Logout success", 'Dissmiss', {duration: 2500});
     localStorage.clear();
+  }
+
+  onBooking(){
+    console.log("Booking");
+    this.route.navigateByUrl('/booking');
+    
   }
 }

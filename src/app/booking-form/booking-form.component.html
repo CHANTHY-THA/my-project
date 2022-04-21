@@ -6,7 +6,7 @@
                 <mat-icon>more_vert</mat-icon>
             </button>
             <mat-menu #menu="matMenu">
-            <button routerLink="/booking" class="menu-icon" mat-menu-item>
+            <button class="menu-icon" mat-menu-item>
                 <mat-icon>dialpad</mat-icon>
                 <span (click)="createCustomer()" cdkFocusInitial>Save</span>
             </button>
@@ -163,7 +163,7 @@
     </div>
 
     <!-- ================Save data========================= -->
-    <button (click)="createCustomer()" (click)="openDialog()" class="save-btn" mat-raised-button color="primary">Save</button>
+    <button (click)="createCustomer()" class="save-btn" mat-raised-button color="primary">Save</button>
     <button class="cancel-btn" routerLink="/booking" routerLinkActive="active-link" mat-stroked-button>Cancel</button>
   </div>
   

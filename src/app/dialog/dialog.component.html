@@ -1,1 +1,10 @@
-<p>dialog works!</p>
+
+<h1 mat-dialog-title>{{data.title}}</h1>
+<div mat-dialog-content>
+  <p>{{data.message}}</p>
+</div>
+
+<div mat-dialog-actions class="twoBtn">
+  <button (click)="onNoClick()" mat-button mat-dialog-close>No</button>
+  <button (click)="onYesClick()" routerLink="/booking" routerLinkActive="active-link" mat-button cdkFocusInitial mat-dialog-close>Save</button>
+</div>

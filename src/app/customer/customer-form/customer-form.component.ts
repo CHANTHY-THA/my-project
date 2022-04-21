@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { bookingtype } from '../interface/bookingType';
-import { ServicesComponent } from '../services/services.component';
+import { customerType } from 'src/app/interface/customerType';
+import { ServicesComponent } from 'src/app/services/services.component';
 
 @Component({
-  selector: 'app-booking-form',
-  templateUrl: './booking-form.component.html',
-  styleUrls: ['./booking-form.component.scss']
+  selector: 'app-customer-form',
+  templateUrl: './customer-form.component.html',
+  styleUrls: ['./customer-form.component.scss']
 })
-export class BookingFormComponent implements OnInit {
+export class CustomerFormComponent implements OnInit {
   customer: string = '';
   phone: string = '';
   email: string = '';
@@ -26,21 +26,32 @@ export class BookingFormComponent implements OnInit {
     private newCustomer: ServicesComponent,
   ) { }
 
+
+  form: FormGroup = new FormGroup({
+    customer: new FormControl('', Validators.required),
+    phone: new FormControl('', [Validators.required, Validators.minLength(8)]),
+    email: new FormControl('',Validators.email),
+    address: new FormControl('', Validators.required),
+  })
+
   ngOnInit(): void {
 
   }
 
   // ===============Update item===============
-  updateItem(element: bookingtype){
-    this.customer= element.customer;
-    
+  updateCustomer(element: customerType){
+  
     console.log(element);
+    this.customer = element.customer;
+
+    console.log(this.customer);
+    
     
   }
 
   // ==============Get value from input==============
   createCustomer() {
-    let customer: bookingtype = {
+    let customer: customerType = {
       customer: this.customer,
       phone: this.phone,
       email: this.email,
@@ -49,9 +60,11 @@ export class BookingFormComponent implements OnInit {
     if (this.customer == '' || this.phone == '' || this.email == '' || this.address == '') {
       this.snackBar.open("Invalid input", 'Dissmiss', {duration: 2500});
     } else{
-      this.newCustomer.addItem(customer);
+      this.newCustomer.addCustomer(customer);
+      console.log(customer);
+      
       this.snackBar.open("Success", 'Dissmiss', {duration: 2500});
-      this.route.navigateByUrl('/booking');
+      this.route.navigateByUrl('/customer');
     }
   
 
